@@ -15,8 +15,7 @@ export default function AboutPage() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, possimus nulla? Doloribus quia quisquam dolorem optio, ratione omnis libero quibusdam vitae eveniet architecto natus eius possimus? Quasi iure error mollitia.
             Doloribus animi corporis ullam quam autem, est libero aspernatur non ex voluptatum soluta dolor! Totam neque eaque odit, delectus in repellat modi numquam et nulla? Quidem itaque totam obcaecati nostrum.
             Consectetur fuga neque illum, sint similique molestias placeat commodi deleniti in. Ipsa ipsum assumenda, nam expedita optio dolore, quibusdam adipisci repellat voluptatibus asperiores exercitationem, explicabo quo atque ut! Rerum, aspernatur?
-            Vitae praesentium fuga non assumenda consequuntur ex provident at nobis maxime magni aliquid corrupti nisi hic dignissimos fugit quod a voluptate, voluptatem aspernatur dicta labore repellat ut cum. Consectetur, ducimus?
-            Optio, aperiam labore aut sapiente voluptates modi magni, veniam repellendus soluta praesentium voluptate. Consectetur tempora mollitia ipsa illo corporis. Vitae at doloribus odit quam quis nisi officia a fugiat eligendi?
+            
 
           </Grid>
           <Grid
