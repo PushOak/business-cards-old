@@ -12,11 +12,7 @@ export default function AboutPage() {
         />
         <Grid container spacing={2}>
           <Grid item xs={12} md={8} alignSelf='center'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, possimus nulla? Doloribus quia quisquam dolorem optio, ratione omnis libero quibusdam vitae eveniet architecto natus eius possimus? Quasi iure error mollitia.
-            Doloribus animi corporis ullam quam autem, est libero aspernatur non ex voluptatum soluta dolor! Totam neque eaque odit, delectus in repellat modi numquam et nulla? Quidem itaque totam obcaecati nostrum.
-            Consectetur fuga neque illum, sint similique molestias placeat commodi deleniti in. Ipsa ipsum assumenda, nam expedita optio dolore, quibusdam adipisci repellat voluptatibus asperiores exercitationem, explicabo quo atque ut! Rerum, aspernatur?
-            
-
+           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur facere aliquam praesentium cum quis. Consectetur temporibus in dicta molestiae porro dolor est totam aut, quos reiciendis explicabo perspiciatis ab quas. Obcaecati natus provident, perspiciatis exercitationem porro ipsum molestiae dolorum, atque aliquam sapiente, laborum ex ut unde. Explicabo aliquid dolorum corrupti earum veniam repellat iure hic amet voluptatem odit nostrum adipisci quaerat eos doloremque maxime architecto unde necessitatibus provident, quo praesentium! Excepturi itaque sed rem ducimus, tempora vel, repudiandae et ad hic necessitatibus numquam voluptatibus atque ullam est. Cum eaque facilis odit consequuntur doloremque autem. Enim tenetur laboriosam delectus libero consectetur.
           </Grid>
           <Grid
             item
