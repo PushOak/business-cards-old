@@ -13,13 +13,19 @@ import OnClickEvent from './sandbox/Events/OnClickEvent';
 import FatherComponent from './sandbox/Events/FatherComponent';
 import CardPage from './cards/pages/CardPage';
 import AboutPage from './pages/AboutPage';
+import Counter from './sandbox/stateHook/Counter';
+import MyDetails from './sandbox/stateHook/MyDetails';
+
+
 
 
 function App() {
   return (
     <div className="App">
-      {/* <CardPage /> */}
-      <AboutPage />
+      <CardPage />
+      {/* <AboutPage /> */}
+      {/* <Counter /> */}
+      <MyDetails />
     </div>
   );
 }
