@@ -16,6 +16,9 @@ import AboutPage from './pages/AboutPage';
 import Counter from './sandbox/stateHook/Counter';
 import MyDetails from './sandbox/stateHook/MyDetails';
 import TodoList from './sandbox/stateHook/TodoList';
+import { BrowserRouter } from 'react-router-dom';
+import Router from './routes/Router';
+import Layout from './layout/Layout';
 
 
 
@@ -23,11 +26,11 @@ import TodoList from './sandbox/stateHook/TodoList';
 function App() {
   return (
     <div className="App">
-      {/* <CardPage /> */}
-      {/* <AboutPage /> */}
-      {/* <Counter /> */}
-      {/* <MyDetails /> */}
-      <TodoList />
+      <BrowserRouter>
+      <Layout>
+        <Router />
+      </Layout>
+      </BrowserRouter>
     </div>
   );
 }
