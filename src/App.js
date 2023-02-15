@@ -15,6 +15,7 @@ import CardPage from './cards/pages/CardPage';
 import AboutPage from './pages/AboutPage';
 import Counter from './sandbox/stateHook/Counter';
 import MyDetails from './sandbox/stateHook/MyDetails';
+import TodoList from './sandbox/stateHook/TodoList';
 
 
 
@@ -22,10 +23,11 @@ import MyDetails from './sandbox/stateHook/MyDetails';
 function App() {
   return (
     <div className="App">
-      <CardPage />
+      {/* <CardPage /> */}
       {/* <AboutPage /> */}
       {/* <Counter /> */}
-      <MyDetails />
+      {/* <MyDetails /> */}
+      <TodoList />
     </div>
   );
 }
