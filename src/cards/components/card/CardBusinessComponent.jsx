@@ -18,6 +18,8 @@ import React from "react";
 import CardHead from "./CardHead";
 import CardBody from "./CardBody";
 import CardActionBar from "./CardActionBar";
+import { useNavigate } from "react-router-dom";
+import ROUTES from "../../../routes/routesModel";
 
 export default function CardBusinessComponent({
   card,
@@ -26,10 +28,11 @@ export default function CardBusinessComponent({
   handleLike
 }) {
 
+  const navigate = useNavigate();
   return (
     <>
       <Card sx={{ width: 250, m: 2 }}>
-        <CardActionArea>
+        <CardActionArea onClick={()=>navigate(`${ROUTES.CARD_INFO}/${card._id}`)}>
           <CardHead image={card.image} />
           <CardBody
             title={card.title}

@@ -1,11 +1,8 @@
 import React from 'react';
-import Logo from './topNavBar/logo/Logo';
+import NavBar from './topNavBar/NavBar'
+
 
 export default function Header() {
-  return (
-    <>
-    Header
-      <Logo/>
-    </>
-  )
+  return <NavBar />
+  
 }

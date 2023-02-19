@@ -4,16 +4,16 @@ import Main from './main/Main';
 import Footer from './footer/Footer';
 import { node } from 'prop-types';
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
   return (
     <>
-    <Header />
-    <Main>{children}</Main>
-    <Footer />
+      <Header />
+      <Main>{children}</Main>
+      <Footer />
     </>
   )
 }
 
 Layout.propTypes = {
-    children: node.isRequired,
+  children: node.isRequired,
 }
