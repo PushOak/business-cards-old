@@ -5,6 +5,7 @@ const ROUTES = {
     LOGIN:'/login',
     SIGNUP:'/signup',
     CARD_INFO: '/card-info',
+    SANDBOX: '/sandbox',
 }
 
 export default ROUTES;

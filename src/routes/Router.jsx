@@ -4,9 +4,16 @@ import CardDetailsPage from '../cards/pages/CardDetailsPage';
 import CardPage from '../cards/pages/CardPage';
 import AboutPage from '../pages/AboutPage';
 import ErrorPage from '../pages/ErrorPage';
+import SandBox from '../sandbox/SandBox';
 import LoginPage from '../users/pages/LoginPage';
 import SignupPage from '../users/pages/SignupPage';
+import Counter from '../sandbox/stateHook/Counter';
+import MyDetails from '../sandbox/stateHook/MyDetails';
+import Password from '../sandbox/stateHook/Password';
+import TodoList from '../sandbox/stateHook/TodoList';
 import ROUTES from './routesModel';
+import FirstEffect from '../sandbox/effectHook/FirstEffect';
+import Countries from '../sandbox/effectHook/Countries';
 
 export default function Router() {
     return (
@@ -17,7 +24,18 @@ export default function Router() {
             <Route path={ROUTES.LOGIN} element={<LoginPage/>} />
             <Route path={ROUTES.SIGNUP} element={<SignupPage/>} />
             <Route path={`${ROUTES.CARD_INFO}/:id`} element={<CardDetailsPage />} />
+            <Route path='password' element={<Password/>} />
             <Route path='*' element={<ErrorPage />}/>
+            <Route path={ROUTES.SANDBOX} element={<SandBox />}>
+                <Route path='counter' element={<Counter/>} />
+                <Route path='mydetails' element={<MyDetails/>} />
+                <Route path='password' element={<Password/>} />
+                <Route path='todo' element={<TodoList/>} />
+                <Route path='first-effect' element={<FirstEffect/>} />
+                <Route path='countries' element={<Countries/>} />
+            </Route>
         </Routes>
     )
 }
+
+
