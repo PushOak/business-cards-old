@@ -22,8 +22,8 @@ export default function SandBox() {
                           sx={{ color: "black" }}
                       />
                       <NavItem to="todo" label="Todo Page" sx={{ color: "black" }} />
-                      <NavItem to="first-effect" label="First Effect Page" sx={{ color: "black" }} />
                       <NavItem to="countries" label="Countries Page" sx={{ color: "black" }} />
+                      <NavItem to="render" label="Render Page" sx={{ color: "black" }} />
                   </Toolbar>
               </AppBar>
               <Container>

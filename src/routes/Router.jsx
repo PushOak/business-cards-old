@@ -11,28 +11,30 @@ import Counter from '../sandbox/stateHook/Counter';
 import MyDetails from '../sandbox/stateHook/MyDetails';
 import Password from '../sandbox/stateHook/Password';
 import TodoList from '../sandbox/stateHook/TodoList';
-import ROUTES from './routesModel';
 import FirstEffect from '../sandbox/effectHook/FirstEffect';
 import Countries from '../sandbox/effectHook/Countries';
+import ROUTES from './routesModel';
+import RenderComponent from '../sandbox/render/RenderComponent';
 
 export default function Router() {
     return (
         <Routes>
             <Route path={ROUTES.ROOT} element={<CardPage />} />
             <Route path={ROUTES.CARDS} element={<CardPage />} />
-            <Route path={ROUTES.ABOUT} element={<AboutPage/>} />
-            <Route path={ROUTES.LOGIN} element={<LoginPage/>} />
-            <Route path={ROUTES.SIGNUP} element={<SignupPage/>} />
+            <Route path={ROUTES.ABOUT} element={<AboutPage />} />
+            <Route path={ROUTES.LOGIN} element={<LoginPage />} />
+            <Route path={ROUTES.SIGNUP} element={<SignupPage />} />
             <Route path={`${ROUTES.CARD_INFO}/:id`} element={<CardDetailsPage />} />
-            <Route path='password' element={<Password/>} />
-            <Route path='*' element={<ErrorPage />}/>
+            <Route path='password' element={<Password />} />
+            <Route path='*' element={<ErrorPage />} />
             <Route path={ROUTES.SANDBOX} element={<SandBox />}>
-                <Route path='counter' element={<Counter/>} />
-                <Route path='mydetails' element={<MyDetails/>} />
-                <Route path='password' element={<Password/>} />
-                <Route path='todo' element={<TodoList/>} />
-                <Route path='first-effect' element={<FirstEffect/>} />
-                <Route path='countries' element={<Countries/>} />
+                <Route path='counter' element={<Counter />} />
+                <Route path='mydetails' element={<MyDetails />} />
+                <Route path='password' element={<Password />} />
+                <Route path='todo' element={<TodoList />} />
+                <Route path='first-effect' element={<FirstEffect />} />
+                <Route path='countries' element={<Countries />} />
+                <Route path='render' element={<RenderComponent />} />
             </Route>
         </Routes>
     )
