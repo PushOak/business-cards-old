@@ -1,5 +1,6 @@
 import { Avatar, Box, Button, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import Country2 from "./Country2";
 
 export default function Countries() {
     //יש לייבא את כל המדינות מהרסט אייפיאיי שעבדנו איתו בעבר
@@ -32,22 +33,9 @@ export default function Countries() {
             {countries
                 ? countries.map((country, i) => {
                     return (
-                        <Box
-                            display="flex"
-                            sx={{ justifyContent: "space-between" }}
-                            key={JSON.stringify(country)}
-                        >
-                            <Avatar
-                                src={country.flags.png}
-                                alt={`${country.name.common} flag`}
-                            />
-                            <Typography sx={{ width: "150px" }}>
-                                {country.name.common}
-                            </Typography>
-                            <Typography sx={{ width: "150px" }}>
-                                {country.capital?.[0]}
-                            </Typography>
-                        </Box>
+                        <>
+                            <Country2 country={country} key={JSON.stringify(country)} />
+                        </>
                     );
                 })
                 : "Loading..."}

@@ -24,6 +24,7 @@ export default function SandBox() {
                       <NavItem to="todo" label="Todo Page" sx={{ color: "black" }} />
                       <NavItem to="countries" label="Countries Page" sx={{ color: "black" }} />
                       <NavItem to="render" label="Render Page" sx={{ color: "black" }} />
+                      <NavItem to="get2countries" label="Get Countries" sx={{ color: "black" }} />
                   </Toolbar>
               </AppBar>
               <Container>

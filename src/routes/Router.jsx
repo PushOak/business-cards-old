@@ -15,6 +15,7 @@ import FirstEffect from '../sandbox/effectHook/FirstEffect';
 import Countries from '../sandbox/effectHook/Countries';
 import ROUTES from './routesModel';
 import RenderComponent from '../sandbox/render/RenderComponent';
+import Get2Countries from '../sandbox/render/Get2Countries';
 
 export default function Router() {
     return (
@@ -28,7 +29,7 @@ export default function Router() {
             <Route path='password' element={<Password />} />
             <Route path='*' element={<ErrorPage />} />
             <Route path={ROUTES.SANDBOX} element={<SandBox />}>
-                <Route path='counter' element={<Counter />} />
+                <Route path='get2countries' element={<Get2Countries />} />
                 <Route path='mydetails' element={<MyDetails />} />
                 <Route path='password' element={<Password />} />
                 <Route path='todo' element={<TodoList />} />
