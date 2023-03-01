@@ -1,6 +1,7 @@
 import { Button, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useMemo, useRef, useState } from "react";
+import AbcIcon from "@mui/icons-material/Abc";
 import MyButton from "./MyButton";
 
 export default function ShowData() {
@@ -17,8 +18,12 @@ export default function ShowData() {
     const showDataCapital = useCallback(() => {
         console.log(first.current.value.toUpperCase());
         console.log(second.current.value.toUpperCase());
-        setCounter((prev)=> prev + 1);
+        setCounter((prev) => prev + 1);
     }, []);
+
+    const memoIcon = useMemo(() => {
+        return <AbcIcon />
+    }, [])
 
     return (
         <div>
@@ -26,7 +31,9 @@ export default function ShowData() {
                 <TextField inputRef={first}></TextField>
                 <TextField inputRef={second}></TextField>
                 <MyButton handleClick={showData}>Show Data</MyButton>
-                <MyButton handleClick={showDataCapital}>Show Capital Data</MyButton>
+                <MyButton handleClick={showDataCapital}>
+                    {memoIcon}
+                </MyButton>
                 <Typography>
                     {counter}
                 </Typography>
