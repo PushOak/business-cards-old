@@ -19,6 +19,7 @@ import Get2Countries from '../sandbox/render/Get2Countries';
 import ChangeColor from '../sandbox/class/stateTasks/ChangeColor';
 import ChangeStyle from '../sandbox/class/stateTasks/ChangeStyle';
 import MyData from '../sandbox/class/memorization/MyData';
+import ShowData from '../sandbox/class/memorization/ShowData';
 
 export default function Router() {
     return (
@@ -31,7 +32,7 @@ export default function Router() {
             <Route path={`${ROUTES.CARD_INFO}/:id`} element={<CardDetailsPage />} />
             <Route path='password' element={<Password />} />
             <Route path='*' element={<ErrorPage />} />
-            <Route path='test' element={<MyData />} />
+            <Route path='show-data' element={<ShowData />} />
             <Route path={ROUTES.SANDBOX} element={<SandBox />}>
                 <Route path='get2countries' element={<Get2Countries />} />
                 <Route path='mydetails' element={<MyDetails />} />
