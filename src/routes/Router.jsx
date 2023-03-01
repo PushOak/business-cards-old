@@ -16,6 +16,9 @@ import Countries from '../sandbox/effectHook/Countries';
 import ROUTES from './routesModel';
 import RenderComponent from '../sandbox/render/RenderComponent';
 import Get2Countries from '../sandbox/render/Get2Countries';
+import ChangeColor from '../sandbox/class/stateTasks/ChangeColor';
+import ChangeStyle from '../sandbox/class/stateTasks/ChangeStyle';
+import MyData from '../sandbox/class/memorization/MyData';
 
 export default function Router() {
     return (
@@ -28,6 +31,7 @@ export default function Router() {
             <Route path={`${ROUTES.CARD_INFO}/:id`} element={<CardDetailsPage />} />
             <Route path='password' element={<Password />} />
             <Route path='*' element={<ErrorPage />} />
+            <Route path='test' element={<MyData />} />
             <Route path={ROUTES.SANDBOX} element={<SandBox />}>
                 <Route path='get2countries' element={<Get2Countries />} />
                 <Route path='mydetails' element={<MyDetails />} />
