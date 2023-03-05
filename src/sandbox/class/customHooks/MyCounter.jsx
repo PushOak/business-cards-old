@@ -3,7 +3,7 @@ import React from 'react';
 import useCounter from './useCounter';
 
 export default function MyCounter() {
-    const { counter, increment, decrement, reset } = useCounter(69, 5)
+    const { counter, increment, decrement, reset } = useCounter(69, 5);
   return (
     <>
         <Button onClick={increment}>+</Button>

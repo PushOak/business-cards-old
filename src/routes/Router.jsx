@@ -21,6 +21,7 @@ import ChangeStyle from '../sandbox/class/stateTasks/ChangeStyle';
 import MyData from '../sandbox/class/memorization/MyData';
 import ShowData from '../sandbox/class/memorization/ShowData';
 import MyCounter from '../sandbox/class/customHooks/MyCounter';
+import ShowAlert from '../sandbox/class/customHooks/ShowAlert';
 
 export default function Router() {
     return (
@@ -33,7 +34,7 @@ export default function Router() {
             <Route path={`${ROUTES.CARD_INFO}/:id`} element={<CardDetailsPage />} />
             <Route path='password' element={<Password />} />
             <Route path='*' element={<ErrorPage />} />
-            <Route path='show-data' element={<MyCounter />} />
+            <Route path='show-data' element={<ShowAlert />} />
             <Route path={ROUTES.SANDBOX} element={<SandBox />}>
                 <Route path='get2countries' element={<Get2Countries />} />
                 <Route path='mydetails' element={<MyDetails />} />
