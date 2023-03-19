@@ -23,6 +23,8 @@ import ShowData from '../sandbox/class/memorization/ShowData';
 import MyCounter from '../sandbox/class/customHooks/MyCounter';
 import ShowAlert from '../sandbox/class/customHooks/ShowAlert';
 import Father from '../sandbox/context/Father';
+import MyForm from '../sandbox/forms/MyForm';
+import MyForm2 from '../sandbox/forms/MyForm2';
 
 export default function Router() {
     return (
@@ -44,7 +46,8 @@ export default function Router() {
                 <Route path='first-effect' element={<FirstEffect />} />
                 <Route path='countries' element={<Countries />} />
                 <Route path='render' element={<RenderComponent />} />
-                <Route path='father' element={<Father />} />
+                <Route path='test' element={<MyForm />} />
+                <Route path='my-form-2' element={<MyForm2 />} />
             </Route>
         </Routes>
     )

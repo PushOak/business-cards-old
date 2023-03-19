@@ -21,18 +21,22 @@ import Router from './routes/Router';
 import Layout from './layout/Layout';
 
 import ThemeProvider from './providers/ThemeProvider';
+import SnackbarProvider from './providers/SnackbarProvider';
+import SandBox from './sandbox/SandBox';
 
 function App() {
-  
+
 
   return (
     <div className="App">
       <BrowserRouter>
-        <ThemeProvider>
-          <Layout>
-            <Router />
-          </Layout>
-        </ThemeProvider>
+        <SnackbarProvider>
+          <ThemeProvider>
+            <Layout>
+              <Router />
+            </Layout>
+          </ThemeProvider>
+        </SnackbarProvider>
       </BrowserRouter>
     </div>
   );

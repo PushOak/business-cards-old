@@ -10,6 +10,7 @@ export default function SandBox() {
           <div>
               <AppBar position="sticky" color="transparent">
                   <Toolbar>
+                      <NavItem to="test" label="test" sx={{ color: "black" }} />
                       <NavItem to="counter" label="Counter Page" sx={{ color: "black" }} />
                       <NavItem
                           to="mydetails"
