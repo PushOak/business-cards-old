@@ -25,6 +25,7 @@ import ShowAlert from '../sandbox/class/customHooks/ShowAlert';
 import Father from '../sandbox/context/Father';
 import MyForm from '../sandbox/forms/MyForm';
 import MyForm2 from '../sandbox/forms/MyForm2';
+import TestForm from '../sandbox/forms/TestForm';
 
 export default function Router() {
     return (
@@ -47,7 +48,8 @@ export default function Router() {
                 <Route path='countries' element={<Countries />} />
                 <Route path='render' element={<RenderComponent />} />
                 <Route path='test' element={<MyForm />} />
-                <Route path='my-form-2' element={<MyForm2 />} />
+                {/* <Route path='my-form-2' element={<MyForm2 />} /> */}
+                <Route path='testform' element={<TestForm />} />
             </Route>
         </Routes>
     )
