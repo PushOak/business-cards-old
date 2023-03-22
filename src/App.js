@@ -23,6 +23,7 @@ import Layout from './layout/Layout';
 import ThemeProvider from './providers/ThemeProvider';
 import SnackbarProvider from './providers/SnackbarProvider';
 import SandBox from './sandbox/SandBox';
+import UserProvider from './users/providers/UserProvider';
 
 function App() {
 
@@ -32,9 +33,11 @@ function App() {
       <BrowserRouter>
         <SnackbarProvider>
           <ThemeProvider>
-            <Layout>
+            <UserProvider>
+              <Layout>
               <Router />
             </Layout>
+            </UserProvider>
           </ThemeProvider>
         </SnackbarProvider>
       </BrowserRouter>
