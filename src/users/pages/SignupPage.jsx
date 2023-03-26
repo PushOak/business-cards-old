@@ -1,22 +1,45 @@
-import React from 'react';
-import {Container} from '@mui/material';
-import PageHeader from '../../components/PageHeader';
-import { Navigate, useNavigate } from 'react-router-dom';
-import ROUTES from '../../routes/routesModel';
+import { Container } from "@mui/material";
+import React from "react";
+import { Navigate } from "react-router-dom";
+import useForm from "../../forms/hooks/useForm";
+import ROUTES from "../../routes/routesModel";
+import UserForm from "../components/UserForm";
+import initialSignupForm from "../helpers/initialForms/initialSignupForm";
+import signupSchema from "../models/joi-schema/signupSchema";
 
 export default function SignupPage() {
-    const user = true;
-    const navigate = useNavigate();
-    if(user)  return <Navigate replace to={ROUTES.CARDS}/>
+  // const user = true;
+
+  // if (user) return <Navigate replace to={ROUTES.CARDS} />;
+  const handleSignup = () => {
+    console.log("signup successful");
+  };
+
+  const { value, ...rest } = useForm(
+    initialSignupForm,
+    signupSchema,
+    handleSignup
+  );
 
   return (
-    <>
-        <Container>
-            <PageHeader 
-                title='Welcome to signup page'
-                subtitle='You can register here'
-            />
-        </Container>
-    </>
-  )
+    <Container
+      sx={{
+        paddingTop: 8,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <UserForm
+        onSubmit={rest.onSubmit}
+        onReset={rest.handleReset}
+        onFormChange={rest.validateForm}
+        title="register form"
+        errors={value.errors}
+        data={value.data}
+        onInputChange={rest.handleChange}
+        setData={rest.setData}
+      />
+    </Container>
+  );
 }
