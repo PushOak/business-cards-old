@@ -4,33 +4,39 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import CallIcon from "@mui/icons-material/Call";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import {func, string} from "prop-types";
+import { func, string } from "prop-types";
+import { useUser } from "../../../users/providers/UserProvider";
 
 export default function CardActionBar({
   handleDelete,
   handleEdit,
   handleLike,
   id,
+  user_id,
 }) {
+
+  const { user } = useUser();
+  console.log(user);
+
   return (
     <>
       <CardActions sx={{ paddingTop: 0, justifyContent: "space-between" }}>
-        <Box>
-          <IconButton aria-label="Delete Card" onClick={()=>handleDelete(id)}>
+        {user?.isAdmin || user?.id == user_id ? (<Box>
+          <IconButton aria-label="Delete Card" onClick={() => handleDelete(id)}>
             <DeleteIcon />
           </IconButton>
-          <IconButton aria-label="Edit Card" onClick={()=>handleEdit(id)}>
+          <IconButton aria-label="Edit Card" onClick={() => handleEdit(id)}>
             <ModeEditIcon />
           </IconButton>
-        </Box>
+        </Box>) : null}
 
         <Box>
           <IconButton aria-label="Call">
             <CallIcon />
           </IconButton>
-          <IconButton aria-label="Add to favorite" onClick={()=>handleLike(id)}>
+          {user && (<IconButton aria-label="Add to favorite" onClick={() => handleLike(id)}>
             <FavoriteIcon />
-          </IconButton>
+          </IconButton>)}
         </Box>
       </CardActions>
     </>

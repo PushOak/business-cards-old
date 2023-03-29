@@ -45,6 +45,7 @@ export default function CardBusinessComponent({
 
         <CardActionBar
           id={card._id}
+          user_id={card.user_id}
           handleDelete={handleDelete}
           handleEdit={handleEdit}
           handleLike={handleLike}

@@ -12,6 +12,8 @@ const ROUTES = {
     USER_PROFILE: '/user-info',
     EDIT_USER: '/edit-user',
     SANDBOX: '/sandbox',
+    FAV_CARDS: '/favorite-cards',
+    MY_CARDS: '/my-cards',
 }
 
 export default ROUTES;

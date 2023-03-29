@@ -26,6 +26,8 @@ import Father from '../sandbox/context/Father';
 import MyForm from '../sandbox/forms/MyForm';
 import MyForm2 from '../sandbox/forms/MyForm2';
 import TestForm from '../sandbox/forms/TestForm';
+import FavCards from '../cards/pages/FavCards';
+import MyCards from '../cards/pages/MyCards';
 
 export default function Router() {
     return (
@@ -39,6 +41,8 @@ export default function Router() {
             <Route path='password' element={<Password />} />
             <Route path='*' element={<ErrorPage />} />
             <Route path='show-data' element={<ShowAlert />} />
+            <Route path='favorite-cards' element={<FavCards />} />
+            <Route path='my-cards' element={<MyCards />} />
             <Route path={ROUTES.SANDBOX} element={<SandBox />}>
                 <Route path='get2countries' element={<Get2Countries />} />
                 <Route path='mydetails' element={<MyDetails />} />

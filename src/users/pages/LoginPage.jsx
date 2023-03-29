@@ -28,6 +28,7 @@ export default function LoginPage() {
     loginSchema,
     handleLogin
   );
+  
   if (user) return <Navigate replace to={ROUTES.CARDS} />;
 
   return (

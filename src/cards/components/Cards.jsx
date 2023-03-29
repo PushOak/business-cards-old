@@ -2,13 +2,8 @@ import { Grid, Typography } from "@mui/material";
 import React from "react";
 import CardBusinessComponent from "./card/CardBusinessComponent";
 
-export default function Cards({cards}) {
-
-    // Action Bar functions
-    const handleDelete = (id) => {
-        console.log(`Card ${id} deleted`);
-    }
-
+export default function Cards({ cards, handleDelete }) {
+    
     const handleEdit = (id) => {
         console.log(`Card ${id} is being edited`);
     }

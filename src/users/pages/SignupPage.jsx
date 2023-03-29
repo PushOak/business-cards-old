@@ -7,11 +7,10 @@ import UserForm from "../components/UserForm";
 import initialSignupForm from "../helpers/initialForms/initialSignupForm";
 import useUsers from "../hooks/useUsers";
 import signupSchema from "../models/joi-schema/signupSchema";
+import { useUser } from "../providers/UserProvider";
 
 export default function SignupPage() {
-  // const user = true;
 
-  // if (user) return <Navigate replace to={ROUTES.CARDS} />;
   const { handleSignup } = useUsers();
 
   const { value, ...rest } = useForm(
@@ -19,6 +18,10 @@ export default function SignupPage() {
     signupSchema,
     handleSignup
   );
+
+  const { user } = useUser();
+
+  if (user) return <Navigate replace to={ROUTES.CARDS} />;
 
   return (
     <Container

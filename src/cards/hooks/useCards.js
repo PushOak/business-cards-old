@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useAxios from "../../hooks/useAxios";
 import { useSnack } from "../../providers/SnackbarProvider";
-import { getCards } from "../services/cardApiService";
+import { deleteCard, getCards, getMyCards } from "../services/cardApiService";
 
 export default function useCards() {
 
@@ -20,15 +20,42 @@ export default function useCards() {
             snack('success', 'All cards are here!');
         } catch (error) {
             setLoading(false);
+            setCards(null);
             setError(error);
         }
     }
+
+    const handleGetMyCards = async () => {
+        setLoading(true);
+        try {
+            let data = await getMyCards();
+            setLoading(false);
+            setCards(data);
+            snack('success', 'Your cards are here!');
+        } catch (error) {
+            setLoading(false);
+            setCards(null);
+            setError(error);
+        }
+    }
+
+    const handleDeleteCard = async (cardId) => {
+        try {
+            setLoading(true);
+            await deleteCard(cardId);
+            setLoading(false);
+        } catch (error) {
+            setLoading(false);
+            setError(error);
+        }
+    };
 
     return {
         cards,
         isLoading,
         error,
         handleGetCards,
+        handleGetMyCards,
+        handleDeleteCard,
     }
-
 }
