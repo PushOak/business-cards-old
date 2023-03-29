@@ -5,15 +5,14 @@ import useForm from "../../forms/hooks/useForm";
 import ROUTES from "../../routes/routesModel";
 import UserForm from "../components/UserForm";
 import initialSignupForm from "../helpers/initialForms/initialSignupForm";
+import useUsers from "../hooks/useUsers";
 import signupSchema from "../models/joi-schema/signupSchema";
 
 export default function SignupPage() {
   // const user = true;
 
   // if (user) return <Navigate replace to={ROUTES.CARDS} />;
-  const handleSignup = () => {
-    console.log("signup successful");
-  };
+  const { handleSignup } = useUsers();
 
   const { value, ...rest } = useForm(
     initialSignupForm,
