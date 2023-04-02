@@ -19,6 +19,11 @@ export default function CardActionBar({
   const { user } = useUser();
   const [isDialogOpen, setDialog] = useState(false);
 
+  const handleDeleteCard = () => {
+    handleDelete(id);
+    setDialog(false);
+  }
+
   return (
     <>
       <CardActions sx={{ paddingTop: 0, justifyContent: "space-between" }}>
@@ -43,7 +48,7 @@ export default function CardActionBar({
       <CardDeleteDialog
         isDialogOpen={isDialogOpen}
         onChangeDialog={() => setDialog(false)}
-        onDelete={handleDelete}
+        onDelete={handleDeleteCard}
       />
     </>
   );

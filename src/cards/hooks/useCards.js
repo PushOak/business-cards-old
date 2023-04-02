@@ -8,6 +8,7 @@ export default function useCards() {
     const [cards, setCards] = useState([]);
     const [isLoading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [card, setCard] = useState(null);
     useAxios();
     const snack = useSnack();
 
@@ -49,6 +50,14 @@ export default function useCards() {
             setError(error);
         }
     };
+
+    // handleGetCard
+
+    // handleUpdateCard
+
+    // handleLikeCard
+
+    // handleGetFavCards
 
     return {
         cards,

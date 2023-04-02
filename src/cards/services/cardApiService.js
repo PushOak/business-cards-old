@@ -32,4 +32,41 @@ export const deleteCard = async (cardId) => {
     }
 };
 
+export const getCard = async (cardId) => {
+    try {
+        const { data } = await axios.get(`${apiURL}/cards/${cardId}`);
+        return data;
+    } catch (error) {
+        return Promise.reject(error.message);
+    }
+};
 
+export const createCard = async (card) => {
+    try {
+        const { data } = await axios.post(`${apiURL}/cards/`, card);
+        return data;
+    } catch (error) {
+        return Promise.reject(error.message);
+    }
+};
+
+export const editCard = async (cardId, normalaizedCard) => {
+    try {
+        const { data } = await axios.put(
+            `${apiURL}/cards/${cardId}`,
+            normalaizedCard
+        );
+        return data;
+    } catch (error) {
+        return Promise.reject(error.message);
+    }
+};
+
+export const changeLikeStatus = async (cardId) => {
+    try {
+        const { data } = await axios.patch(`${apiURL}/cards/${cardId}`);
+        return data;
+    } catch (error) {
+        return Promise.reject(error.message);
+    }
+};
