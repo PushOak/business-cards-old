@@ -9,14 +9,15 @@ import useCards from "../hooks/useCards";
 import CardsFeedback from "../components/CardsFeedback";
 
 export default function CardPage() {
-  const { cards, isLoading, error, handleGetCards } = useCards();
+  const { cards, isLoading, error, handleGetCards, handleDeleteCard } = useCards();
 
   useEffect(() => {
     handleGetCards();
   }, []);
 
-  const handleDelete = (id) => {
-    console.log(`card ${id} deleted`);
+  const handleDelete = async (id) => {
+    await handleDeleteCard(id);
+    handleGetCards();
   }
 
   return (
@@ -24,7 +25,7 @@ export default function CardPage() {
       <Container sx={{ mt: 2 }}>
         <PageHeader
           title="Cards"
-          subtitle="On this page you can find all bussines cards from all categories"
+          subtitle="On this page you can find all business cards from all categories"
         />
         <CardsFeedback
           isLoading={isLoading}

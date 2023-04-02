@@ -1,11 +1,12 @@
 import { Box, CardActions, IconButton } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import CallIcon from "@mui/icons-material/Call";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { func, string } from "prop-types";
 import { useUser } from "../../../users/providers/UserProvider";
+import CardDeleteDialog from "./CardDeleteDialog";
 
 export default function CardActionBar({
   handleDelete,
@@ -16,13 +17,13 @@ export default function CardActionBar({
 }) {
 
   const { user } = useUser();
-  console.log(user);
+  const [isDialogOpen, setDialog] = useState(false);
 
   return (
     <>
       <CardActions sx={{ paddingTop: 0, justifyContent: "space-between" }}>
         {user?.isAdmin || user?.id == user_id ? (<Box>
-          <IconButton aria-label="Delete Card" onClick={() => handleDelete(id)}>
+          <IconButton aria-label="Delete Card" onClick={() => setDialog(true)}>
             <DeleteIcon />
           </IconButton>
           <IconButton aria-label="Edit Card" onClick={() => handleEdit(id)}>
@@ -39,6 +40,11 @@ export default function CardActionBar({
           </IconButton>)}
         </Box>
       </CardActions>
+      <CardDeleteDialog
+        isDialogOpen={isDialogOpen}
+        onChangeDialog={() => setDialog(false)}
+        onDelete={handleDelete}
+      />
     </>
   );
 }
