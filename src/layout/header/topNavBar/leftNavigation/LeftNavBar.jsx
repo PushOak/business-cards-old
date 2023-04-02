@@ -14,13 +14,16 @@ export default function LeftNavBar() {
 
   return (
     <Box>
-      <LogoIcon />
-      <Logo />
-      <NavItem to={ROUTES.CARDS} label='Cards' />
-      <NavItem to={ROUTES.ABOUT} label='About' />
-      {user && <NavItem to={ROUTES.FAV_CARDS} label='Favorite Cards' />}
-      {user?.isBusiness && <NavItem to={ROUTES.MY_CARDS} label='My Cards' />}
-      {user?.isAdmin && <NavItem to={ROUTES.SANDBOX} label='Sandbox' />}
+        <LogoIcon />
+      <Box sx={{ display: { xs: "none", md: "inline-flex" }, }}>
+        <Logo />
+        <NavItem to={ROUTES.CARDS} label='Cards' />
+        <NavItem to={ROUTES.ABOUT} label='About' />
+        {user && <NavItem to={ROUTES.FAV_CARDS} label='Favorite Cards' />}
+        {user?.isBusiness && <NavItem to={ROUTES.MY_CARDS} label='My Cards' />}
+        {user?.isAdmin && <NavItem to={ROUTES.SANDBOX} label='Sandbox' />}
+      </Box>
     </Box>
+
   )
 }

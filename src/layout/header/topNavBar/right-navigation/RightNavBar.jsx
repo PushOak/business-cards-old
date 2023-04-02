@@ -8,6 +8,7 @@ import ROUTES from '../../../../routes/routesModel';
 import Logged from './Logged';
 import NotLogged from './NotLogged';
 import { useUser } from '../../../../users/providers/UserProvider';
+import MoreButton from './MoreButton';
 
 export default function RightNavBar() {
 
@@ -16,7 +17,7 @@ export default function RightNavBar() {
 
     return (
         <>
-            <Box sx={{ display: " flex", alignItems: "center" }}>
+            <Box sx={{ display: { xs: "none", md: "inline-flex" } }}>
                 <IconButton sx={{ ml: 1 }} onClick={toggleDarkMode}>
                     {isDark ? <LightModeIcon /> : <DarkModeIcon />}
                 </IconButton>
@@ -24,6 +25,7 @@ export default function RightNavBar() {
                 {user && <Logged />}
                 {!user && <NotLogged />}
             </Box>
+            <MoreButton />
         </>
     );
 }
