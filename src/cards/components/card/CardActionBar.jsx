@@ -7,6 +7,8 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { func, string } from "prop-types";
 import { useUser } from "../../../users/providers/UserProvider";
 import CardDeleteDialog from "./CardDeleteDialog";
+import { useNavigate } from "react-router-dom";
+import ROUTES from '../../../routes/routesModel';
 
 export default function CardActionBar({
   handleDelete,
@@ -18,6 +20,7 @@ export default function CardActionBar({
 
   const { user } = useUser();
   const [isDialogOpen, setDialog] = useState(false);
+  const navigate = useNavigate()
 
   const handleDeleteCard = () => {
     handleDelete(id);
@@ -31,7 +34,7 @@ export default function CardActionBar({
           <IconButton aria-label="Delete Card" onClick={() => setDialog(true)}>
             <DeleteIcon />
           </IconButton>
-          <IconButton aria-label="Edit Card" onClick={() => handleEdit(id)}>
+          <IconButton aria-label="Edit Card" onClick={() => navigate(`${ROUTES.EDIT_CARD}/${id}`)}>
             <ModeEditIcon />
           </IconButton>
         </Box>) : null}

@@ -28,6 +28,7 @@ import MyForm2 from '../sandbox/forms/MyForm2';
 import TestForm from '../sandbox/forms/TestForm';
 import FavCards from '../cards/pages/FavCards';
 import MyCards from '../cards/pages/MyCards';
+import EditCardsPage from '../cards/pages/EditCardsPage';
 
 export default function Router() {
     return (
@@ -38,6 +39,7 @@ export default function Router() {
             <Route path={ROUTES.LOGIN} element={<LoginPage />} />
             <Route path={ROUTES.SIGNUP} element={<SignupPage />} />
             <Route path={`${ROUTES.CARD_INFO}/:id`} element={<CardDetailsPage />} />
+            <Route path={`${ROUTES.EDIT_CARD}/:id`} element={<EditCardsPage />} />
             <Route path='password' element={<Password />} />
             <Route path='*' element={<ErrorPage />} />
             <Route path='show-data' element={<ShowAlert />} />
