@@ -1,7 +1,7 @@
+import React from 'react';
 
 import { Divider, Typography } from '@mui/material';
 import { string } from 'prop-types';
-import React from 'react';
 
 export default function PageHeader({title, subtitle}) {
   return (

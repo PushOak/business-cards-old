@@ -1,5 +1,6 @@
-import { Box } from '@mui/material';
 import React from 'react';
+
+import { Box } from '@mui/material';
 import NavItem from '../../../../routes/components/NavItem';
 import ROUTES from '../../../../routes/routesModel';
 import { useUser } from '../../../../users/providers/UserProvider';
