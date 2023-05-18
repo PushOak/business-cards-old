@@ -15,9 +15,11 @@ export default function UserProvider({ children }) {
     const [token, setToken] = useState(getToken());
 
     useEffect(() => {
+        console.log((!user));
         if (!user) {
             const userFromLocalStorage = getUser();
             setUser(userFromLocalStorage);
+            console.log('sdfdsfds');
         }
     }, [user]);
 
@@ -31,6 +33,7 @@ export default function UserProvider({ children }) {
 
 export const useUser = () => {
     const context = useContext(UserContext);
+
     if (!context) throw new Error("useUser must be used within a NameProvider");
     return context;
 };

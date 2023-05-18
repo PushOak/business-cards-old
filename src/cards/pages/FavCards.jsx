@@ -1,9 +1,48 @@
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
+import useCards from '../hooks/useCards';
+import Container from '@mui/material/Container';
+import PageHeader from '../../components/PageHeader';
+import CardsFeedback from '../components/CardsFeedback';
+import { changeLikeStatus } from '../services/cardApiService';
+import { useUser } from '../../users/providers/UserProvider';
+// import { useUser } from '../../users/providers/UserProvider';
 
 export default function FavCards() {
+  // const { user } = useUser();
+  const { value, ...rest } = useCards();
+  const { handleDeleteCard, handleGetFavCards, handleLikeCard } = rest;
+  const { isLoading, cards, card, error } = value;
+  const { user } = useUser();
+
+
+  useEffect(() => {
+    handleGetFavCards();
+  }, [user]);
+
+  const onDeleteCard = useCallback(
+    async (cardId) => {
+      await handleDeleteCard(cardId);
+      await handleGetFavCards();
+    },
+    [handleDeleteCard]
+  );
+
   return (
     <>
-        Favorite Cards
+      <Container>
+        <PageHeader
+          title='Favorite Cards Page'
+          subtitle='Here you can find all your favorite business cards'
+        />
+
+        <CardsFeedback
+          isLoading={isLoading}
+          error={error}
+          cards={cards}
+          onDelete={onDeleteCard}
+          handleLikeCard={handleLikeCard}
+        />
+      </Container>
     </>
-  )
-}
+  );
+};

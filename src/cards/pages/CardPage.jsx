@@ -7,19 +7,29 @@ import Error from "./../../components/Error";
 import { getCards } from "../services/cardApiService";
 import useCards from "../hooks/useCards";
 import CardsFeedback from "../components/CardsFeedback";
+import { useSearchParams } from "react-router-dom";
 
 export default function CardPage() {
-  const { value, handleGetCards, handleDeleteCard } = useCards();
+  const { value, handleGetCards, handleDeleteCard, handleLikeCard } = useCards();
   const { cards, error, isLoading } = value;
+  const [searchParams, setSearch] = useSearchParams();
 
   useEffect(() => {
     handleGetCards();
   }, []);
 
+  const handleSearch = () => {
+    if (searchParams.get("q")) {
+      return cards.filter((c) => c.title.includes(searchParams.get("q")));
+    } else {
+      return cards;
+    }
+  };
+
   const handleDelete = async (id) => {
     await handleDeleteCard(id);
     handleGetCards();
-  }
+  };
 
   return (
     <div>
@@ -31,8 +41,9 @@ export default function CardPage() {
         <CardsFeedback
           isLoading={isLoading}
           error={error}
-          cards={cards}
+          cards={handleSearch()}
           handleDelete={handleDelete}
+          handleLikeCard={handleLikeCard}
         />
       </Container>
     </div>

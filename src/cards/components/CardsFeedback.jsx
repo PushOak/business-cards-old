@@ -9,14 +9,25 @@ export default function CardsFeedback({
   cards,
   error,
   handleDelete,
+  handleLikeCard,
 }) {
+
   if (isLoading) return <Spinner />;
-  if (error) return <Error errorMessage={error} />;
+  if (error) return <Error errorMessage={error.toString()} />;
   if (cards && cards.length === 0) {
     return (
-      <Typography>Whoops... it seems that there are no business cards to display.</Typography>
-    )
+      <Typography>
+        Whoops... it seems that there are no business cards to display.
+      </Typography>
+    );
   }
-  if (cards) return <Cards cards={cards} handleDelete={handleDelete} />;
+  if (cards)
+    return (
+      <Cards
+        cards={cards}
+        handleDelete={handleDelete}
+        handleLikeCard={handleLikeCard}
+      />
+    );
   return null;
 }

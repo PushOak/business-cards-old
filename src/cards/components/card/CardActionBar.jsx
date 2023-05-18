@@ -1,5 +1,5 @@
-import { Box, CardActions, IconButton } from "@mui/material";
 import React, { useState } from "react";
+import { Box, CardActions, IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import CallIcon from "@mui/icons-material/Call";
@@ -9,18 +9,20 @@ import { useUser } from "../../../users/providers/UserProvider";
 import CardDeleteDialog from "./CardDeleteDialog";
 import { useNavigate } from "react-router-dom";
 import ROUTES from '../../../routes/routesModel';
+import useCards from "../../hooks/useCards";
 
 export default function CardActionBar({
   handleDelete,
   handleEdit,
-  handleLike,
+  handleLikeCard,
   id,
   user_id,
+  isLiked
 }) {
 
+  const navigate = useNavigate()
   const { user } = useUser();
   const [isDialogOpen, setDialog] = useState(false);
-  const navigate = useNavigate()
 
   const handleDeleteCard = () => {
     handleDelete(id);
@@ -30,7 +32,7 @@ export default function CardActionBar({
   return (
     <>
       <CardActions sx={{ paddingTop: 0, justifyContent: "space-between" }}>
-        {user?.isAdmin || user?.id == user_id ? (<Box>
+        {user?.isAdmin || user?.id === user_id ? (<Box>
           <IconButton aria-label="Delete Card" onClick={() => setDialog(true)}>
             <DeleteIcon />
           </IconButton>
@@ -43,8 +45,8 @@ export default function CardActionBar({
           <IconButton aria-label="Call">
             <CallIcon />
           </IconButton>
-          {user && (<IconButton aria-label="Add to favorite" onClick={() => handleLike(id)}>
-            <FavoriteIcon />
+          {user && (<IconButton aria-label="Add to favorite" onClick={() => handleLikeCard(id)}>
+            <FavoriteIcon style={{ color: isLiked ? 'red' : 'lightgray' }} />
           </IconButton>)}
         </Box>
       </CardActions>
@@ -58,8 +60,8 @@ export default function CardActionBar({
 }
 
 CardActionBar.propTypes = {
-  handleDelete: func.isRequired,
+  // handleDelete: func.isRequired,
   handleEdit: func.isRequired,
-  handleLike: func.isRequired,
+  handleLikeCard: func.isRequired,
   id: string.isRequired,
 }

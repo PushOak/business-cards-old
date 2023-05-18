@@ -20,19 +20,23 @@ import CardBody from "./CardBody";
 import CardActionBar from "./CardActionBar";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../../../routes/routesModel";
+import { useUser } from "../../../users/providers/UserProvider";
 
 export default function CardBusinessComponent({
   card,
   handleDelete,
   handleEdit,
-  handleLike
+  handleLikeCard,
 }) {
-
   const navigate = useNavigate();
+  const { user } = useUser()
+
   return (
     <>
       <Card sx={{ width: 250, m: 2 }}>
-        <CardActionArea onClick={()=>navigate(`${ROUTES.CARD_INFO}/${card._id}`)}>
+        <CardActionArea
+          onClick={() => navigate(`${ROUTES.CARD_INFO}/${card._id}`)}
+        >
           <CardHead image={card.image} />
           <CardBody
             title={card.title}
@@ -48,7 +52,8 @@ export default function CardBusinessComponent({
           user_id={card.user_id}
           handleDelete={handleDelete}
           handleEdit={handleEdit}
-          handleLike={handleLike}
+          handleLikeCard={handleLikeCard}
+          isLiked={card.likes?.includes(user.id)}
         />
       </Card>
     </>

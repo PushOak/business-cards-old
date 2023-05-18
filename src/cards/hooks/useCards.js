@@ -20,6 +20,7 @@ export default function useCards() {
     useAxios();
     const snack = useSnack();
     const { user } = useUser();
+    console.log('user in toot', user);
 
     const requestStatus = (loading, errorMessage, cards, card = null) => {
         setLoading(loading);
@@ -88,24 +89,32 @@ export default function useCards() {
     const handleLikeCard = useCallback(async (cardId) => {
         try {
             const card = await changeLikeStatus(cardId);
-            requestStatus(false, null, cards, card);
+
+            const tempCards = [...cards];
+            const index = tempCards.findIndex(c => c._id === cardId);
+            tempCards[index] = card;
+            requestStatus(false, null, tempCards, card);
             snack("success", "The business card has been Liked");
         } catch (error) {
             requestStatus(false, error, null);
         }
-    }, []);
-    
+    }, [cards]);
+
     //handleGetFavCards
     const handleGetFavCards = useCallback(async () => {
-        try {
-            setLoading(true);
-            const cards = await getCards();
-            const favCards = cards.filter((card) => card.likes.includes(user.id));
-            requestStatus(false, null, favCards);
-        } catch (error) {
-            requestStatus(false, error, null);
+        if (user !== null) {
+            try {
+                setLoading(true);
+                const cards = await getCards();
+
+                const favCards = cards.filter((card) => card.likes.includes(user.id));
+                requestStatus(false, null, favCards);
+            } catch (error) {
+                requestStatus(false, error, null);
+            }
         }
-    }, []);
+
+    }, [user]);
 
     //handleCreateCard
     const handleCreateCard = useCallback(async (cardFromClient) => {
@@ -125,6 +134,7 @@ export default function useCards() {
 
     return {
         value,
+        error,
         handleGetCards,
         handleGetMyCards,
         handleDeleteCard,
