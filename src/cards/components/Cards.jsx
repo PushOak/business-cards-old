@@ -1,10 +1,10 @@
 import React from "react";
-import { Grid} from "@mui/material";
+import { Grid } from "@mui/material";
 import CardBusinessComponent from "./card/CardBusinessComponent";
 
 export default function Cards({ cards, handleDelete, handleLikeCard }) {
-  const handleEdit = (id) => {
-    console.log(`Card ${id} is being edited`);
+  const handleEdit = () => {
+    console.log(`Card is being edited`);
   };
 
   return (

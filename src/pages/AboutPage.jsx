@@ -1,11 +1,14 @@
 import React from "react";
 import { Container, Grid } from "@mui/material";
 import PageHeader from "../components/PageHeader";
+import { useTheme } from "../providers/ThemeProvider";
 
 export default function AboutPage() {
+  const { isDark } = useTheme();
+
   return (
     <>
-      <Container>
+      <Container sx={{ color: isDark ? "lightgray" : "inherit" }}>
         <PageHeader
           title='About Page'
           subtitle='On this page you can find explanation about using the application'

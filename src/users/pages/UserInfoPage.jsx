@@ -1,28 +1,21 @@
-import { Container, Typography } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
-import useForm from "../../forms/hooks/useForm";
-import ROUTES from "../../routes/routesModel";
-import UserForm from "../components/UserForm";
-import initialSignupForm from "../helpers/initialForms/initialSignupForm";
-import useUsers from "../hooks/useUsers";
-import signupSchema from "../models/joi-schema/signupSchema";
+import { Container, ListItem, Stack, Typography } from "@mui/material";
 import { useUser } from "../providers/UserProvider";
 import { getUser } from "../services/usersApiService";
 import useAxios from "../../hooks/useAxios";
+import PageHeader from "../../components/PageHeader";
+import { useTheme } from "../../providers/ThemeProvider";
 
 export default function UserInfoPage() {
   const [userProfile, setUserProfile] = useState(null);
-
+  const { isDark } = useTheme();
   const { user } = useUser();
   useAxios();
 
   const getUserHandler = async () => {
     const userLocal = await getUser();
-
-    console.log(userLocal);
     setUserProfile(userLocal);
-  }
+  };
 
   useEffect(() => {
     getUserHandler();
@@ -34,22 +27,23 @@ export default function UserInfoPage() {
 
   return (
     <Container
-      sx={{
-        paddingTop: 8,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      sx={{ color: isDark ? "lightgray" : "inherit" }}
     >
-      <Typography variant="h2">
-        <p>User Info</p>
-        {userProfile.name.first}
-        {userProfile.name.last}
-        {userProfile.phone}
-        {userProfile.email}
-        {userProfile.password}
-        {userProfile.user_id}
-      </Typography>
+      <PageHeader
+        title="User Info"
+        subtitle="Here you can see your user info"
+      />
+
+      <Stack spacing={1}>
+        <ListItem>First Name: {userProfile.name.first}</ListItem>
+        <ListItem>Last Name: {userProfile.name.last}</ListItem>
+        <ListItem>Phone Number: {userProfile.phone}</ListItem>
+        <ListItem>Email: {userProfile.email}</ListItem>
+        <ListItem>Password: {userProfile.password}</ListItem>
+        <ListItem>User ID: {userProfile.user_id}</ListItem>
+      </Stack>
+      <br></br>
+      For security reasons don't share your password and user id with anyone. Contact our support team if there are any further questions at security@gmail.com.
     </Container>
   );
 };

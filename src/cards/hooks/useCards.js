@@ -85,7 +85,6 @@ export default function useCards() {
     const handleLikeCard = useCallback(async (cardId) => {
         try {
             const card = await changeLikeStatus(cardId);
-
             const tempCards = [...cards];
             const index = tempCards.findIndex(c => c._id === cardId);
             tempCards[index] = card;
@@ -101,13 +100,12 @@ export default function useCards() {
             try {
                 setLoading(true);
                 const cards = await getCards();
-
                 const favCards = cards.filter((card) => card.likes.includes(user.id));
                 requestStatus(false, null, favCards);
             } catch (error) {
                 requestStatus(false, error, null);
-            }
-        }
+            };
+        };
 
     }, [user]);
 
@@ -119,7 +117,7 @@ export default function useCards() {
             snack("success", "A new business card has been created");
         } catch (error) {
             requestStatus(false, error, null);
-        }
+        };
     }, []);
 
     const value = useMemo(() => {

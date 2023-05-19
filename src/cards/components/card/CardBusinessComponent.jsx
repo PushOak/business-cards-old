@@ -31,14 +31,13 @@ export default function CardBusinessComponent({
             cardNumber={card.bizNumber}
           />
         </CardActionArea>
-
         <CardActionBar
           id={card._id}
           user_id={card.user_id}
           handleDelete={handleDelete}
           handleEdit={handleEdit}
           handleLikeCard={handleLikeCard}
-          isLiked={card.likes?.includes(user.id)}
+          isLiked={card.likes?.includes(user?.id)}
         />
       </Card>
     </>

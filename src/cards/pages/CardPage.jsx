@@ -4,11 +4,13 @@ import PageHeader from "../../components/PageHeader";
 import useCards from "../hooks/useCards";
 import CardsFeedback from "../components/CardsFeedback";
 import { useSearchParams } from "react-router-dom";
+import { useTheme } from "../../providers/ThemeProvider";
 
 export default function CardPage() {
   const { value, handleGetCards, handleDeleteCard, handleLikeCard } = useCards();
   const { cards, error, isLoading } = value;
   const [searchParams, setSearch] = useSearchParams();
+  const { isDark } = useTheme();
 
   useEffect(() => {
     handleGetCards();

@@ -6,8 +6,8 @@ import ROUTES from "../../../../routes/routesModel";
 const NotLogged = () => {
     return (
         <Box>
-            <NavItem label="Signup" to={ROUTES.SIGNUP} />
-            <NavItem label="Login" to={ROUTES.LOGIN} />
+            <NavItem label="Signup" to={ROUTES.SIGNUP} sx={{ color: "lightgray" }} />
+            <NavItem label="Login" to={ROUTES.LOGIN} sx={{ color: "lightgray" }} />
         </Box>
     );
 };

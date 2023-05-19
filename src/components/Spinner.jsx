@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import { string, number, oneOfType } from "prop-types";
 
 const Spinner = ({ color, size, height }) => {
-    console.log("SPINNER");
     return (
         <Box
             sx={{

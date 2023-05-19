@@ -7,13 +7,6 @@ export default function RenderComponent() {
     const [value, setValue] = useState(0);
     const [value2, setValue2] = useState(0);
 
-    //   useEffect(() => {
-    //     console.log("The effect is rendered");
-    //     return () => {
-    //       console.log("The components is unmount");
-    //     };
-    //   }, []);
-
     const doSomethingLong = useMemo(() => {
         console.log("The long function is render");
         return 5 * value2;
@@ -32,4 +25,4 @@ export default function RenderComponent() {
             <p>{doSomethingLong}</p>
         </div>
     );
-}
+};

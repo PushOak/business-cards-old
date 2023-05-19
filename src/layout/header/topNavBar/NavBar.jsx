@@ -9,7 +9,7 @@ export default function NavBar() {
         <>
             <MenuProvider>
                 <AppBar position="sticky" color="primary">
-                    <Toolbar sx={{ justifyContent: "space-between" }}>
+                    <Toolbar sx={{ justifyContent: "space-between"}}>
                         <LeftNavBar />
                         <RightNavBar />
                     </Toolbar>
