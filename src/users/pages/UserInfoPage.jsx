@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Container, ListItem, Stack, Typography } from "@mui/material";
-import { useUser } from "../providers/UserProvider";
 import { getUser } from "../services/usersApiService";
 import useAxios from "../../hooks/useAxios";
 import PageHeader from "../../components/PageHeader";
@@ -9,7 +8,6 @@ import { useTheme } from "../../providers/ThemeProvider";
 export default function UserInfoPage() {
   const [userProfile, setUserProfile] = useState(null);
   const { isDark } = useTheme();
-  const { user } = useUser();
   useAxios();
 
   const getUserHandler = async () => {

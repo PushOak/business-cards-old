@@ -7,7 +7,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { bool, func } from "prop-types";
 
-const CardDeleteDialog = ({ isDialogOpen, onDelete, onChangeDialog }) => {
+const CardDeleteDialog = ({ isDialogOpen, handleDelete, onChangeDialog }) => {
   return (
     <Dialog
       open={isDialogOpen}
@@ -30,7 +30,7 @@ const CardDeleteDialog = ({ isDialogOpen, onDelete, onChangeDialog }) => {
         <Button onClick={onChangeDialog} color="error">
           cancel
         </Button>
-        <Button onClick={onDelete} autoFocus color="info">
+        <Button onClick={handleDelete} autoFocus color="info">
           Delete card
         </Button>
       </DialogActions>
@@ -41,7 +41,7 @@ const CardDeleteDialog = ({ isDialogOpen, onDelete, onChangeDialog }) => {
 CardDeleteDialog.propTypes = {
   isDialogOpen: bool.isRequired,
   onChangeDialog: func.isRequired,
-  onDelete: func.isRequired,
+  handleDelete: func.isRequired,
 };
 
 export default CardDeleteDialog;

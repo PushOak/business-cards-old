@@ -52,7 +52,7 @@ export default function CardActionBar({
       <CardDeleteDialog
         isDialogOpen={isDialogOpen}
         onChangeDialog={() => setDialog(false)}
-        onDelete={handleDeleteCard}
+        handleDelete={handleDeleteCard}
       />
     </>
   );

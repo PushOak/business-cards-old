@@ -8,7 +8,7 @@ import { useUser } from "../../users/providers/UserProvider";
 export default function FavCards() {
   const { value, ...rest } = useCards();
   const { handleDeleteCard, handleGetFavCards, handleLikeCard } = rest;
-  const { isLoading, cards, card, error } = value;
+  const { isLoading, cards, error } = value;
   const { user } = useUser();
 
 
@@ -36,7 +36,7 @@ export default function FavCards() {
           isLoading={isLoading}
           error={error}
           cards={cards}
-          onDelete={onDeleteCard}
+          handleDelete={onDeleteCard}
           handleLikeCard={handleLikeCard}
         />
       </Container>
