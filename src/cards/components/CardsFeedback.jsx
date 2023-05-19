@@ -1,5 +1,5 @@
-import { Typography } from "@mui/material";
 import React from "react";
+import { Typography } from "@mui/material";
 import Error from "../../components/Error";
 import Spinner from "../../components/Spinner";
 import Cards from "./Cards";
@@ -11,9 +11,8 @@ export default function CardsFeedback({
   handleDelete,
   handleLikeCard,
 }) {
-
-  if (isLoading) return <Spinner />;
-  if (error) return <Error errorMessage={error.toString()} />;
+  if (isLoading) return <Spinner />
+  if (error) return <Error errorMessage={error.toString()} />
   if (cards && cards.length === 0) {
     return (
       <Typography>
@@ -30,4 +29,4 @@ export default function CardsFeedback({
       />
     );
   return null;
-}
+};

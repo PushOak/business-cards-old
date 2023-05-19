@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
-import { CardMedia } from '@mui/material';
+import React from "react";
+import { CardMedia } from "@mui/material";
 
 export default function CardHead({ image }) {
-
     return (
         <>
             <CardMedia
@@ -12,5 +11,5 @@ export default function CardHead({ image }) {
                 alt={image.url}
             />
         </>
-    )
-}
+    );
+};

@@ -10,7 +10,7 @@ export const login = async (user) => {
   } catch (error) {
     console.log(error);
     return Promise.reject(error.message);
-  }
+  };
 };
 
 export const signup = async (normalizedUser) => {
@@ -19,7 +19,7 @@ export const signup = async (normalizedUser) => {
     return data;
   } catch (error) {
     return Promise.reject(error.message);
-  }
+  };
 };
 
 export const getUser = async () => {
@@ -28,5 +28,5 @@ export const getUser = async () => {
     return data;
   } catch (error) {
     return Promise.reject(error.message);
-  }
-}
+  };
+};

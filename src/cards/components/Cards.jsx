@@ -1,15 +1,11 @@
-import { Grid, Typography } from "@mui/material";
 import React from "react";
+import { Grid} from "@mui/material";
 import CardBusinessComponent from "./card/CardBusinessComponent";
 
 export default function Cards({ cards, handleDelete, handleLikeCard }) {
   const handleEdit = (id) => {
     console.log(`Card ${id} is being edited`);
   };
-
-  const handleLike = (id) => {
-    console.log(`Card ${id} liked`);
-  }
 
   return (
     <>
@@ -28,4 +24,4 @@ export default function Cards({ cards, handleDelete, handleLikeCard }) {
       </Grid>
     </>
   );
-}
+};

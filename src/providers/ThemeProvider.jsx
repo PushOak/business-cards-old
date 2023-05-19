@@ -1,14 +1,5 @@
-import React, {
-    createContext,
-    useCallback,
-    useContext,
-    useMemo,
-    useState,
-} from "react";
-import {
-    createTheme,
-    ThemeProvider as MuiThemeProvider,
-} from "@mui/material/styles";
+import React, { createContext, useCallback, useContext, useMemo, useState, } from "react";
+import { createTheme, ThemeProvider as MuiThemeProvider, } from "@mui/material/styles";
 import { node } from "prop-types";
 
 const ThemeContext = createContext();

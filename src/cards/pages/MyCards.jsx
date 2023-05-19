@@ -1,11 +1,11 @@
-import { Container } from '@mui/material';
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import PageHeader from '../../components/PageHeader';
-import ROUTES from '../../routes/routesModel';
-import { useUser } from '../../users/providers/UserProvider';
-import CardsFeedback from '../components/CardsFeedback';
-import useCards from '../hooks/useCards';
+import React, { useEffect } from "react";
+import { Container } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import PageHeader from "../../components/PageHeader";
+import ROUTES from "../../routes/routesModel";
+import { useUser } from "../../users/providers/UserProvider";
+import CardsFeedback from "../components/CardsFeedback";
+import useCards from "../hooks/useCards";
 
 export default function MyCards() {
     const { value, handleGetMyCards, handleDeleteCard } = useCards();
@@ -25,7 +25,7 @@ export default function MyCards() {
     const handleDelete = async (id) => {
         await handleDeleteCard(id);
         await handleGetMyCards();
-    }
+    };
 
     return (
         <div>
@@ -43,4 +43,4 @@ export default function MyCards() {
             </Container>
         </div>
     );
-}
+};

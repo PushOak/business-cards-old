@@ -13,13 +13,6 @@ import useAxios from "../../hooks/useAxios";
 
 export default function UserInfoPage() {
   const [userProfile, setUserProfile] = useState(null);
-  // const { handleSignup } = useUsers();
-
-  // const { value, ...rest } = useForm(
-  //   initialSignupForm,
-  //   signupSchema,
-  //   handleSignup
-  // );
 
   const { user } = useUser();
   useAxios();
@@ -33,14 +26,11 @@ export default function UserInfoPage() {
 
   useEffect(() => {
     getUserHandler();
-
-  }, [])
-
-  // if (user) return <Navigate replace to={ROUTES.USER_PROFILE} />;
+  }, []);
 
   if (userProfile === null) {
     return <Typography variant="h2">Loading... please wait</Typography>
-  }
+  };
 
   return (
     <Container
@@ -52,7 +42,7 @@ export default function UserInfoPage() {
       }}
     >
       <Typography variant="h2">
-      <p>User Info</p>
+        <p>User Info</p>
         {userProfile.name.first}
         {userProfile.name.last}
         {userProfile.phone}
@@ -60,16 +50,6 @@ export default function UserInfoPage() {
         {userProfile.password}
         {userProfile.user_id}
       </Typography>
-      {/* <UserForm
-        onSubmit={rest.onSubmit}
-        onReset={rest.handleReset}
-        onFormChange={rest.validateForm}
-        title="User Info"
-        errors={value.errors}
-        data={value.data}
-        onInputChange={rest.handleChange}
-        setData={rest.setData}
-      /> */}
     </Container>
   );
-}
+};

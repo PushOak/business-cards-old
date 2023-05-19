@@ -1,9 +1,9 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
-import { node } from "prop-types";
 import Box from "@mui/material/Box";
-import Menu from "./Menu";
 import { useMediaQuery } from "@mui/material";
 import { useTheme as useMuiTheme } from "@mui/material/styles";
+import { node } from "prop-types";
+import Menu from "./Menu";
 
 const MenuContext = React.createContext(null);
 
@@ -26,7 +26,6 @@ export const MenuProvider = ({ children }) => {
   return (
     <>
       <MenuContext.Provider value={setOpen}>{children}</MenuContext.Provider>
-
       <Box
         ref={anchorRef}
         component="span"

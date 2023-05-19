@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useSnack } from "../providers/SnackbarProvider";
 import { useUser } from "./../users/providers/UserProvider";
+
 export default function useAxios() {
   const snack = useSnack();
   const { token } = useUser();
@@ -28,4 +29,4 @@ export default function useAxios() {
       axios.interceptors.response.eject(responseInterceptor);
     };
   }, [snack, token]);
-}
+};

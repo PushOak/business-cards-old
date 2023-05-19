@@ -1,11 +1,7 @@
 import { useState, useCallback, useMemo } from "react";
 import useAxios from "../../hooks/useAxios";
 import { login, signup } from "../services/usersApiService";
-import {
-  getUser,
-  removeToken,
-  setTokenInLocalStorage,
-} from "../services/localStorageService";
+import { getUser, removeToken, setTokenInLocalStorage } from "../services/localStorageService";
 import { useUser } from "../providers/UserProvider";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../../routes/routesModel";

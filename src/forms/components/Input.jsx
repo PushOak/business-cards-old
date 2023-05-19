@@ -1,8 +1,8 @@
 import React from "react";
-import { string, bool, object, func } from "prop-types";
 import TextField from "@mui/material/TextField";
-import { makeFirstLetterCapital } from "../utils/algoMethods";
 import Grid from "@mui/material/Grid";
+import { string, bool, object, func } from "prop-types";
+import { makeFirstLetterCapital } from "../utils/algoMethods";
 
 const Input = ({
   variant,

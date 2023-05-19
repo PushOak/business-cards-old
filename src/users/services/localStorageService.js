@@ -10,7 +10,7 @@ export const getUser = () => {
         return JwtDecode(user);
     } catch (error) {
         return null;
-    }
+    };
 };
 
 export const removeToken = () => localStorage.removeItem(TOKEN);

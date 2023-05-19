@@ -1,8 +1,8 @@
 import React from "react";
-import { func, object, string } from "prop-types";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
+import { func, object, string } from "prop-types";
 import Form from "../../forms/components/Form";
 import Input from "../../forms/components/Input";
 import ROUTES from "../../routes/routesModel";

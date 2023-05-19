@@ -1,6 +1,6 @@
-import { Container, Grid } from '@mui/material'
-import React from 'react'
-import PageHeader from '../components/PageHeader'
+import React from "react";
+import { Container, Grid } from "@mui/material";
+import PageHeader from "../components/PageHeader";
 
 export default function AboutPage() {
   return (
@@ -12,13 +12,36 @@ export default function AboutPage() {
         />
         <Grid container spacing={2}>
           <Grid item xs={12} md={8} alignSelf='center'>
-           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur facere aliquam praesentium cum quis. Consectetur temporibus in dicta molestiae porro dolor est totam aut, quos reiciendis explicabo perspiciatis ab quas. Obcaecati natus provident, perspiciatis exercitationem porro ipsum molestiae dolorum, atque aliquam sapiente, laborum ex ut unde. Explicabo aliquid dolorum corrupti earum veniam repellat iure hic amet voluptatem odit nostrum adipisci quaerat eos doloremque maxime architecto unde necessitatibus provident, quo praesentium! Excepturi itaque sed rem ducimus, tempora vel, repudiandae et ad hic necessitatibus numquam voluptatibus atque ullam est. Cum eaque facilis odit consequuntur doloremque autem. Enim tenetur laboriosam delectus libero consectetur.
+            Welcome to our Business Cards website!
+            <br></br>
+            At BCard, we are passionate about helping businesses make a lasting impression. Our platform serves as a hub for business owners, professionals, and entrepreneurs to create and showcase their unique business cards.
+            <br></br>
+            <br></br>
+            We understand the importance of a well-designed business card that effectively communicates your brand and contact information. With our user-friendly interface and a wide range of customization options, you have the freedom to create personalized and professional business cards that leave a lasting impact.
+            <br></br>
+            <br></br>
+            Key Features:
+            <br></br>
+            <br></br>
+            Easy Card Creation: Our card builder allows you to design your business cards.
+            <br></br>
+            <br></br>
+            Customizable Elements: Change the information of your card on the fly.
+            <br></br>
+            <br></br>
+            Accessibility: Our platform is designed to be accessible from any device, ensuring that you can create, edit, and manage your business cards on the go.
+            <br></br>
+            <br></br>
+            We believe that a well-crafted business card can open doors to new connections, opportunities, and success. Join our community of entrepreneurs and professionals and elevate your networking game with captivating business cards.
+            <br></br>
+            <br></br>
+            Start creating your business cards today and leave a lasting impression!
           </Grid>
           <Grid
             item
             md={4}
-            sx={{ display: { md: 'flex', xs: 'none' }, justifyContent: 'center' }}>
-            <img src='/assets/images/aboutPage.jpg' alt='card' width='100%' />
+            sx={{ display: { md: "flex", xs: "none" }, justifyContent: "center" }}>
+            <img src="/assets/images/aboutPage.jpg" alt="card" width="100%" />
           </Grid>
         </Grid>
       </Container>

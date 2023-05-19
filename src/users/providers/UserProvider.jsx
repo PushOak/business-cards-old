@@ -1,11 +1,5 @@
+import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { node } from "prop-types";
-import React, {
-    createContext,
-    useContext,
-    useEffect,
-    useMemo,
-    useState,
-} from "react";
 import { getToken, getUser } from "../services/localStorageService";
 
 const UserContext = createContext();
@@ -15,11 +9,9 @@ export default function UserProvider({ children }) {
     const [token, setToken] = useState(getToken());
 
     useEffect(() => {
-        console.log((!user));
         if (!user) {
             const userFromLocalStorage = getUser();
             setUser(userFromLocalStorage);
-            console.log('sdfdsfds');
         }
     }, [user]);
 
@@ -29,7 +21,7 @@ export default function UserProvider({ children }) {
     );
 
     return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
-}
+};
 
 export const useUser = () => {
     const context = useContext(UserContext);

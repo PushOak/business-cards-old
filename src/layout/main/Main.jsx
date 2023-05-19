@@ -1,10 +1,9 @@
-import { Box } from '@mui/material';
-import { node } from 'prop-types';
-import React from 'react';
-import { useTheme } from '../../providers/ThemeProvider';
+import React from "react";
+import { Box } from "@mui/material";
+import { node } from "prop-types";
+import { useTheme } from "../../providers/ThemeProvider";
 
 export default function Main({ children }) {
-
     const { isDark } = useTheme();
 
     return (
@@ -13,9 +12,9 @@ export default function Main({ children }) {
                 {children}
             </Box>
         </>
-    )
-}
+    );
+};
 
 Main.propTypes = {
     children: node.isRequired,
-}
+};

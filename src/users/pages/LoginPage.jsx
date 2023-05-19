@@ -1,34 +1,26 @@
-import { Container } from "@mui/material";
 import React from "react";
+import { Container } from "@mui/material";
 import PageHeader from "../../components/PageHeader";
 import useForm from "../../forms/hooks/useForm";
 import initialLoginForm from "../helpers/initialForms/initialLoginForm";
 import loginSchema from "../models/joi-schema/loginSchema";
-import ROUTES from "../../routes/routesModel";
-
 import Form from "../../forms/components/Form";
 import Input from "../../forms/components/Input";
 import { useUser } from "../providers/UserProvider";
 import useUsers from "../hooks/useUsers";
 import { Navigate } from "react-router-dom";
+import ROUTES from "../../routes/routesModel";
 
 export default function LoginPage() {
   const { user } = useUser();
   const { handleLogin } = useUsers();
-  //איך אנחנו בונים טופס עם הכלים שבנינו בשיעור קודם
-  //החלק הלוגי:
-  //נשתמש בהוק יוזפורם
-
-  //החלק הויזואלי
-  //נשתמש בקומפוננטת טופס שיצרנו
-  //ונכניס לתוכה קומפוננטות אינפוט שיצרנו
 
   const { value, ...rest } = useForm(
     initialLoginForm,
     loginSchema,
     handleLogin
   );
-  
+
   if (user) return <Navigate replace to={ROUTES.CARDS} />;
 
   return (
@@ -73,4 +65,4 @@ export default function LoginPage() {
       </Container>
     </Container>
   );
-}
+};

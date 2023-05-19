@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-const apiURL = 'http://localhost:8181';
+const apiURL = "http://localhost:8181";
 
 
 export const getCards = async () => {
@@ -10,8 +10,8 @@ export const getCards = async () => {
         return data;
     } catch (error) {
         return Promise.reject(error.message);
-    }
-}
+    };
+};
 
 export const getMyCards = async () => {
     try {
@@ -20,8 +20,8 @@ export const getMyCards = async () => {
         return data;
     } catch (error) {
         return Promise.reject(error.message);
-    }
-}
+    };
+};
 
 export const deleteCard = async (cardId) => {
     try {
@@ -29,7 +29,7 @@ export const deleteCard = async (cardId) => {
         return data;
     } catch (error) {
         return Promise.reject(error.message);
-    }
+    };
 };
 
 export const getCard = async (cardId) => {
@@ -38,7 +38,7 @@ export const getCard = async (cardId) => {
         return data;
     } catch (error) {
         return Promise.reject(error.message);
-    }
+    };
 };
 
 export const createCard = async (card) => {
@@ -47,7 +47,7 @@ export const createCard = async (card) => {
         return data;
     } catch (error) {
         return Promise.reject(error.message);
-    }
+    };
 };
 
 export const editCard = async (cardId, normalaizedCard) => {
@@ -59,7 +59,7 @@ export const editCard = async (cardId, normalaizedCard) => {
         return data;
     } catch (error) {
         return Promise.reject(error.message);
-    }
+    };
 };
 
 export const changeLikeStatus = async (cardId) => {
@@ -68,5 +68,5 @@ export const changeLikeStatus = async (cardId) => {
         return data;
     } catch (error) {
         return Promise.reject(error.message);
-    }
+    };
 };

@@ -6,7 +6,7 @@ import ROUTES from "../../../../routes/routesModel";
 export default function CreateCardIcon() {
   return (
     <NavLink to={ROUTES.CREATE_CARD}>
-      <AddBoxIcon style={{ color: 'lightgray' }} />
+      <AddBoxIcon style={{ color: "lightgray" }} />
     </NavLink>
   );
-}
+};

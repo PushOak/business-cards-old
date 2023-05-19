@@ -7,7 +7,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
 import { useSearchParams } from "react-router-dom";
 import { useTheme } from "../../../../providers/ThemeProvider";
-import useCards from "../../../../cards/hooks/useCards";
 
 export default function SearchBar() {
   const { isDark } = useTheme();
@@ -36,4 +35,4 @@ export default function SearchBar() {
       </Box>
     </>
   );
-}
+};

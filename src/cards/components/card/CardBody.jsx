@@ -1,5 +1,5 @@
-import React from 'react';
-import { CardHeader, Divider, CardContent, Typography } from '@mui/material';
+import React from "react";
+import { CardHeader, Divider, CardContent, Typography } from "@mui/material";
 
 export default function CardBody({ title, subtitle, phone, address, cardNumber }) {
   return (
@@ -19,4 +19,4 @@ export default function CardBody({ title, subtitle, phone, address, cardNumber }
       </CardContent>
     </>
   );
-}
+};

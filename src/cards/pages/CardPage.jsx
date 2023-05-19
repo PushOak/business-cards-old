@@ -1,10 +1,6 @@
-import { Container } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Container } from "@mui/material";
 import PageHeader from "../../components/PageHeader";
-import Cards from "../components/Cards";
-import Spinner from "./../../components/Spinner";
-import Error from "./../../components/Error";
-import { getCards } from "../services/cardApiService";
 import useCards from "../hooks/useCards";
 import CardsFeedback from "../components/CardsFeedback";
 import { useSearchParams } from "react-router-dom";
@@ -48,4 +44,4 @@ export default function CardPage() {
       </Container>
     </div>
   );
-}
+};

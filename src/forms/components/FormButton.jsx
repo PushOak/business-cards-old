@@ -1,6 +1,6 @@
 import React from "react";
-import { string, bool, node, func } from "prop-types";
 import Button from "@mui/material/Button";
+import { string, bool, node, func } from "prop-types";
 
 const FormButton = ({
   variant,
@@ -11,7 +11,6 @@ const FormButton = ({
   disabled,
   node,
 }) => {
-  //  console.log("button " + node);
   return (
     <Button
       variant={variant}

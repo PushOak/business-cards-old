@@ -4,16 +4,20 @@ import CardDetailsPage from "../cards/pages/CardDetailsPage";
 import CardPage from "../cards/pages/CardPage";
 import AboutPage from "../pages/AboutPage";
 import ErrorPage from "../pages/ErrorPage";
-import SandBox from "../sandbox/SandBox";
 import LoginPage from "../users/pages/LoginPage";
 import SignupPage from "../users/pages/SignupPage";
+import FavCards from "../cards/pages/FavCards";
+import MyCards from "../cards/pages/MyCards";
+import EditCardsPage from "../cards/pages/EditCardsPage";
+import CreateCardPage from "../cards/pages/CreateCardsPage";
+import UserInfoPage from "../users/pages/UserInfoPage";
 import Counter from "../sandbox/stateHook/Counter";
+import SandBox from "../sandbox/SandBox";
 import MyDetails from "../sandbox/stateHook/MyDetails";
 import Password from "../sandbox/stateHook/Password";
 import TodoList from "../sandbox/stateHook/TodoList";
 import FirstEffect from "../sandbox/effectHook/FirstEffect";
 import Countries from "../sandbox/effectHook/Countries";
-import ROUTES from "./routesModel";
 import RenderComponent from "../sandbox/render/RenderComponent";
 import Get2Countries from "../sandbox/render/Get2Countries";
 import ChangeColor from "../sandbox/class/stateTasks/ChangeColor";
@@ -26,11 +30,7 @@ import Father from "../sandbox/context/Father";
 import MyForm from "../sandbox/forms/MyForm";
 import MyForm2 from "../sandbox/forms/MyForm2";
 import TestForm from "../sandbox/forms/TestForm";
-import FavCards from "../cards/pages/FavCards";
-import MyCards from "../cards/pages/MyCards";
-import EditCardsPage from "../cards/pages/EditCardsPage";
-import CreateCardPage from "../cards/pages/CreateCardsPage";
-import UserInfoPage from "../users/pages/UserInfoPage";
+import ROUTES from "./routesModel";
 
 export default function Router() {
   return (
@@ -60,9 +60,8 @@ export default function Router() {
         <Route path="countries" element={<Countries />} />
         <Route path="render" element={<RenderComponent />} />
         <Route path="test" element={<MyForm />} />
-        {/* <Route path='my-form-2' element={<MyForm2 />} /> */}
         <Route path="testform" element={<TestForm />} />
       </Route>
     </Routes>
   );
-}
+};

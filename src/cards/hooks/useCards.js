@@ -20,7 +20,6 @@ export default function useCards() {
     useAxios();
     const snack = useSnack();
     const { user } = useUser();
-    console.log('user in toot', user);
 
     const requestStatus = (loading, errorMessage, cards, card = null) => {
         setLoading(loading);
@@ -61,7 +60,6 @@ export default function useCards() {
         }
     }, []);
 
-    //handleGetCard
     const handleGetCard = useCallback(async (cardId) => {
         try {
             setLoading(true);
@@ -73,7 +71,6 @@ export default function useCards() {
         }
     }, []);
 
-    //handleUpdateCard
     const handleUpdateCard = useCallback(async (cardId, cardFromClient) => {
         try {
             setLoading(true);
@@ -85,7 +82,6 @@ export default function useCards() {
         }
     }, []);
 
-    //handleLikeCard
     const handleLikeCard = useCallback(async (cardId) => {
         try {
             const card = await changeLikeStatus(cardId);
@@ -100,7 +96,6 @@ export default function useCards() {
         }
     }, [cards]);
 
-    //handleGetFavCards
     const handleGetFavCards = useCallback(async () => {
         if (user !== null) {
             try {
@@ -116,7 +111,6 @@ export default function useCards() {
 
     }, [user]);
 
-    //handleCreateCard
     const handleCreateCard = useCallback(async (cardFromClient) => {
         try {
             setLoading(true);
@@ -144,4 +138,4 @@ export default function useCards() {
         handleGetFavCards,
         handleLikeCard,
     };
-}
+};

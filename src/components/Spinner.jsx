@@ -1,7 +1,7 @@
 import React from "react";
-import { string, number, oneOfType } from "prop-types";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import { string, number, oneOfType } from "prop-types";
 
 const Spinner = ({ color, size, height }) => {
     console.log("SPINNER");
@@ -33,4 +33,5 @@ Spinner.defaultProps = {
     size: 40,
     height: "50vh",
 };
+
 export default Spinner;

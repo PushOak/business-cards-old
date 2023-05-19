@@ -26,8 +26,6 @@ import SandBox from './sandbox/SandBox';
 import UserProvider from './users/providers/UserProvider';
 
 function App() {
-
-
   return (
     <div className="App">
       <BrowserRouter>
@@ -43,6 +41,6 @@ function App() {
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

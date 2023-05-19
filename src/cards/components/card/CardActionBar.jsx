@@ -8,12 +8,11 @@ import { func, string } from "prop-types";
 import { useUser } from "../../../users/providers/UserProvider";
 import CardDeleteDialog from "./CardDeleteDialog";
 import { useNavigate } from "react-router-dom";
-import ROUTES from '../../../routes/routesModel';
-import useCards from "../../hooks/useCards";
+import ROUTES from "../../../routes/routesModel";
+
 
 export default function CardActionBar({
   handleDelete,
-  handleEdit,
   handleLikeCard,
   id,
   user_id,
@@ -46,7 +45,7 @@ export default function CardActionBar({
             <CallIcon />
           </IconButton>
           {user && (<IconButton aria-label="Add to favorite" onClick={() => handleLikeCard(id)}>
-            <FavoriteIcon style={{ color: isLiked ? 'red' : 'lightgray' }} />
+            <FavoriteIcon style={{ color: isLiked ? "red" : "gray" }} />
           </IconButton>)}
         </Box>
       </CardActions>
@@ -57,11 +56,11 @@ export default function CardActionBar({
       />
     </>
   );
-}
+};
 
 CardActionBar.propTypes = {
-  // handleDelete: func.isRequired,
+  handleDelete: func.isRequired,
   handleEdit: func.isRequired,
   handleLikeCard: func.isRequired,
   id: string.isRequired,
-}
+};

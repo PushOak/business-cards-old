@@ -1,6 +1,5 @@
-import { Typography } from "@mui/material";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Typography } from "@mui/material";
 import NavBarLink from "../../../../routes/components/NavBarLink";
 import ROUTES from "../../../../routes/routesModel";
 
@@ -21,4 +20,4 @@ export default function Logo() {
             </NavBarLink>
         </>
     );
-}
+};

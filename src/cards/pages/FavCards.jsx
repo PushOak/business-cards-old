@@ -1,14 +1,11 @@
-import React, { useEffect, useCallback } from 'react';
-import useCards from '../hooks/useCards';
-import Container from '@mui/material/Container';
-import PageHeader from '../../components/PageHeader';
-import CardsFeedback from '../components/CardsFeedback';
-import { changeLikeStatus } from '../services/cardApiService';
-import { useUser } from '../../users/providers/UserProvider';
-// import { useUser } from '../../users/providers/UserProvider';
+import React, { useEffect, useCallback } from "react";
+import useCards from "../hooks/useCards";
+import Container from "@mui/material/Container";
+import PageHeader from "../../components/PageHeader";
+import CardsFeedback from "../components/CardsFeedback";
+import { useUser } from "../../users/providers/UserProvider";
 
 export default function FavCards() {
-  // const { user } = useUser();
   const { value, ...rest } = useCards();
   const { handleDeleteCard, handleGetFavCards, handleLikeCard } = rest;
   const { isLoading, cards, card, error } = value;

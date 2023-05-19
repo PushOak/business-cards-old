@@ -1,16 +1,15 @@
-import { Container } from "@mui/material";
 import React from "react";
+import { Container } from "@mui/material";
 import { Navigate } from "react-router-dom";
 import useForm from "../../forms/hooks/useForm";
-import ROUTES from "../../routes/routesModel";
 import UserForm from "../components/UserForm";
 import initialSignupForm from "../helpers/initialForms/initialSignupForm";
 import useUsers from "../hooks/useUsers";
 import signupSchema from "../models/joi-schema/signupSchema";
 import { useUser } from "../providers/UserProvider";
+import ROUTES from "../../routes/routesModel";
 
 export default function SignupPage() {
-
   const { handleSignup } = useUsers();
 
   const { value, ...rest } = useForm(
@@ -44,4 +43,4 @@ export default function SignupPage() {
       />
     </Container>
   );
-}
+};
